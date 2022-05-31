@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Anagrams</title>
+</head>
+<body>
+  <script>
+    function checkAnagram(a, b) {
+         let re = /[^A-Za-z0-9]/g;
+
+    a = a.toLowerCase().replace(re, '');
+
+    b = b.toLowerCase().replace(re, '');
+        if (a.length !== b.length) {
+            return false;
+        }
+  
+        var str1 = a.split('').sort().join(''); 
+        var str2 = b.split('').sort().join('');
+  
+        var result = (str1 === str2);
+        return result;
+    }
+    let a = prompt("Please enter the first string");
+    let b = prompt("Please enter the second string");
+  
+    document.write(checkAnagram(a, b));
+</script>
+</body>
+</html>
